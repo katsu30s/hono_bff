@@ -1,12 +1,12 @@
-import { booksTypeDefs, booksResolvers } from "@/resolvers/books.ts";
-import { authorsTypeDefs, authorsResolvers } from "@/resolvers/authors.ts";
-import { pokemonResolvers, pokemonTypeDefs } from "@/resolvers/pokemon.ts";
+import { pokemonTypeDefs } from "@/resolvers//Pokemon/pokemonTypes.ts";
+import { pokemonResolvers } from "@/resolvers/Pokemon/pokemonResolver.ts";
+import { machineTypeDefs } from "@/resolvers/machine/machineTypes.ts";
+import { machineResolvers } from "@/resolvers/machine/machineResolver.ts";
 
-export const typeDefs = [booksTypeDefs, authorsTypeDefs, pokemonTypeDefs];
+export const typeDefs = [pokemonTypeDefs, machineTypeDefs];
 export const resolvers = {
   Query: {
-    ...booksResolvers,
-    ...authorsResolvers,
     ...pokemonResolvers,
+    ...machineResolvers,
   },
 };
