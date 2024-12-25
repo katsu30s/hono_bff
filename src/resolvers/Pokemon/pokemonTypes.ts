@@ -9,9 +9,15 @@ export const pokemonTypeDefs = `#graphql
     weight: Int
   }
 
+  type PokemonListItem {
+    name: String
+    url: String
+  }
+
   type Query {
     pikachu: Pokemon
     fetchPokemon(id: Int!): Pokemon
+    fetchPokemons: [PokemonListItem]
   }
 `;
 
@@ -23,4 +29,9 @@ export type Pokemon = {
   isDefault: boolean;
   order: number;
   weight: number;
+};
+
+export type PokemonListItem = {
+  name: string;
+  url: string;
 };
