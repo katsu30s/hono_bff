@@ -3,7 +3,7 @@ import type {
   Pokemon,
   FetchPokemonsResponse,
   PokemonListItem,
-} from "@/resolvers/Pokemon/pokemonTypes.ts";
+} from "@/features/Pokemon/pokemonTypes.ts";
 
 export const fetchPokemon = async (id: number): Promise<Pokemon> => {
   const response = await fetch(`${endpoint}/pokemon/${id}`);

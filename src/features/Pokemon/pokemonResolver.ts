@@ -2,7 +2,7 @@ import {
   fetchPokemon,
   fetchPokemons,
   pikachu,
-} from "@/resolvers/Pokemon/pokemonService.ts";
+} from "@/features/Pokemon/pokemonService.ts";
 
 export const pokemonResolvers = {
   pikachu: () => pikachu,
