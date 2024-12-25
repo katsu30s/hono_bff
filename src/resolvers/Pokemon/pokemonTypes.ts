@@ -14,10 +14,15 @@ export const pokemonTypeDefs = `#graphql
     url: String
   }
 
+  type FetchPokemonsResponse {
+    next: String
+    results: [PokemonListItem]
+  }
+
   type Query {
     pikachu: Pokemon
     fetchPokemon(id: Int!): Pokemon
-    fetchPokemons: [PokemonListItem]
+    fetchPokemons(next: String): FetchPokemonsResponse
   }
 `;
 
@@ -34,4 +39,9 @@ export type Pokemon = {
 export type PokemonListItem = {
   name: string;
   url: string;
+};
+
+export type FetchPokemonsResponse = {
+  next: string;
+  results: PokemonListItem[];
 };

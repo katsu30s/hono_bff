@@ -9,7 +9,7 @@ export const pokemonResolvers = {
   fetchPokemon: async (_: any, { id }: { id: number }) => {
     return await fetchPokemon(id);
   },
-  fetchPokemons: async () => {
-    return await fetchPokemons();
+  fetchPokemons: async (_: any, { next }: { next: string }) => {
+    return next ? await fetchPokemons(next) : await fetchPokemons();
   },
 };
